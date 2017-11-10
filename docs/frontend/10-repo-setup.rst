@@ -42,6 +42,10 @@ Create the file ``.git/hooks/pre-commit`` with the following content:
 
     echo '--- ESLint report ---';
     node_modules/.bin/eslint --ext .js,.html app/views/ app/scripts/ app/polymer/
+	if [ $? -ne 0 ]; then
+		echo "ESLint must pass to allow commit."
+		exit 1;
+	fi
 
     echo '--- Polymer Lint report ---';
     polymer lint
