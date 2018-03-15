@@ -37,13 +37,16 @@ Located in::
 Provides date management functions.
 
 * ``dayDiff(date1, date2)`` - Get difference in days between two date strings
-* ``ensureDate(date)`` - Try to make sure a date (string or Date object) is a Date object
+* ``ensureDate(date)`` - Try to make sure a date (string or Date object) is a
+  Date object
 * ``isoDate(date)`` - Format a date string as an ISO-date, YYYY-MM-DD
-* ``isoDT(date)`` - Format a date string as an ISO date and time, YYYY-MM-DD HH:mm:ss
+* ``isoDT(date)`` - Format a date string as an ISO date and time, YYYY-MM-DD
+  HH:mm:ss
 * ``pastDate(date)`` - Check if a date string is in the past
 * ``renderDate(date)`` - Alias for ``isoDate(date)``,
 * ``renderDatetime(date)`` - Alias for ``isoDT(date)``
-* ``timeago(date)`` - Get human readable string describing date's difference from now
+* ``timeago(date)`` - Get human readable string describing date's difference
+  from now
 
 Located in::
 
@@ -54,11 +57,14 @@ Located in::
 
 Currency handling functions.
 
-* ``renderAmount(money)`` - Render an amount with decimal separator and currency symbol
+* ``renderAmount(money)`` - Render an amount with decimal separator and currency
+  symbol
 * ``renderMoney(money)`` - Alias for ``renderAmount(money)``
-* ``renderNumberAmount(money)`` - Render an amount with decimal separator but without currency symbol
+* ``renderNumberAmount(money)`` - Render an amount with decimal separator but
+  without currency symbol
 * ``round(number, precision)`` - Round a number to a given precision
-* ``unformatRenderedAmount(amount)`` - Remove currency formatting including decimal separator and currency symbol
+* ``unformatRenderedAmount(amount)`` - Remove currency formatting including
+  decimal separator and currency symbol
 
 Located in::
 
@@ -73,6 +79,7 @@ Cosmoz tabs functions.
 * ``getIconStyle()`` - Returns the element's icon style
 
 Located in::
+
 	app/bower_components/cosmoz-tabs/cosmoz-tabbed-behavior.html
 
 ``Cosmoz.TemplateHelperBehavior``
@@ -80,10 +87,12 @@ Located in::
 
 Various generic template handling functions.
 
-* ``abs(number)`` - Alias for ``Math.abs(number)``, returns the absolute value of a number
+* ``abs(number)`` - Alias for ``Math.abs(number)``, returns the absolute value
+  of a number
 * ``anyTrue(arg1, arg2...)`` - Check if any of the arguments are true
 * ``concat(arg1, arg2...)`` - Concatenate all arguments to a string
-* ``ifElse(iftrue, result, elseresult)`` - If iftrue is true, return result, otherwise return elseresult
+* ``ifElse(iftrue, result, elseresult)`` - If iftrue is true, return result,
+  otherwise return elseresult
 * ``inArray(item, array)`` - Check if item exists in array
 * ``isEmpty(obj)`` - Check if variable is undefined, null, empty Array list
 * ``isEqual(arg1, arg2)`` - Check equality of the arguments
@@ -102,8 +111,9 @@ Functions related to translation.
 * ``detached()``
 * ``gettext(key)`` - Translate text
 * ``ngettext(singular, plural)`` - Translate text in pluralis with interpolation
+* ``npgettext(context, singular, plural)`` - Plurals and context translation
+  with interpolation
 * ``pgettext(context, key)`` - Context translation with interpolation
-* ``npgettext(context, singular, plural)`` - Plurals and context translation with interpolation
 
 Located in::
 
@@ -124,7 +134,8 @@ Located in::
 
 Shared functions for user and group administration views.
 
-* ``confirmRequestCall(requestName, confirmationText)`` - Show a confirmation dialog before running a cz-apicall request
+* ``confirmRequestCall(requestName, confirmationText)`` - Show a confirmation
+  dialog before running a cz-apicall request
 
 Located in::
 
@@ -135,7 +146,8 @@ Located in::
 
 Shared functions for reason code administration views.
 
-* ``openAddActionToReasonCodeDialog(saveSettings)`` - Render a dialog where the user can add actions to reason codes
+* ``openAddActionToReasonCodeDialog(saveSettings)`` - Render a dialog where the
+  user can add actions to reason codes
 
 Located in::
 
@@ -146,13 +158,19 @@ Located in::
 
 Shared functions for role administration views.
 
-* ``getAvailableFunctions(allFunctions)`` - Get functions available for adding to a role based on a list of all functions and omit those already in use
-* ``isAbleToCreateOrUpdateRole(roleData)`` - Verify if role can be created or updated
-* ``mangleFunctionsForOmnitable(functions)`` - Prepare function list for display in a cosmoz-omnitable
-* ``openAddFunctionsDialog()`` - Render a dialog where user can add functions to a role
-* ``removeFunctionsFromRoleButtonClick()`` - Render a dialog where user can remove functions from a role
+* ``getAvailableFunctions(allFunctions)`` - Get functions available for adding
+  to a role based on a list of all functions and omit those already in use
+* ``isAbleToCreateOrUpdateRole(roleData)`` - Verify if role can be created or
+  updated
+* ``mangleFunctionsForOmnitable(functions)`` - Prepare function list for display
+  in a cosmoz-omnitable
+* ``openAddFunctionsDialog()`` - Render a dialog where user can add functions to
+  a role
+* ``removeFunctionsFromRoleButtonClick()`` - Render a dialog where user can
+  remove functions from a role
 
 Located in::
+
 	app/views/administration/roles/helper-behavior.html
 
 ``cz.behaviors.GeneralAgreementsArticlesHelperBehavior``
@@ -171,15 +189,25 @@ Located in::
 
 Functions shared between agreement and price list views.
 
+* ``hasAction(item, actionId)`` - Find out if an item has one specific action
+  based on id
+
+Located in::
+
+	app/views/purchase/suppliers/helper-behavior.html
+
 ``cz.behaviors.GeneralArticlesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shared functions for article views.
 
-* ``createArticle()`` - Use properties in the view to do a request to create an article
-* ``updateArticle(fields)`` - Update article properties in the view and do a request do update an article
+* ``createArticle()`` - Use properties in the view to do a request to create an
+  article
+* ``updateArticle(fields)`` - Update article properties in the view and do a
+  request do update an article
 
 Located in::
+
 	app/views/general/articles-helper-behavior.html
 
 ``cz.behaviors.GeneralArticlesProductGroupsHelperBehavior``
@@ -187,10 +215,32 @@ Located in::
 
 Functions shared between article and product group views.
 
+* ``mapProductGroupHierarchy(contents)`` - Iterate contents and remap data so
+  the label and code are returned
+
+Located in::
+
+	app/views/general/articles-product-groups-helper-behavior.html
+
 ``cz.behaviors.GeneralInvoicesOrdersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Functions shared between invoice and order views.
+
+* ``getDiffRows(rows)`` - get rows where match status is not fully matched
+* ``getHistoryBadgeData(history)`` - Get the number of comments in history data
+* ``getMatchInfo(document)`` - Get matching details by looking on both document
+  header and rows
+* ``getReasonsFromSelectedRowsActions(requestedAction, rowsNotify)`` - Get
+  reason codes from actions on invoice/order rows
+* ``hasRowAction(rowsNotify, actionId)`` - Check if rows has an action id
+  present
+* ``renderAbsMoney(amount)`` - Get the absolute value of an amount formatted as
+  money with currency
+
+Located in::
+
+	app/views/general/invoices-orders-helper-behavior.html
 
 ``cz.behaviors.GeneralInvoicesOrdersMatchingHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -207,10 +257,12 @@ Functions shared between rule and supplier views.
 
 Shared functions for rule views.
 
-* ``_combineRuleAndType(rule, ruleInterface)`` - Combine rule and ruleInterface information
+* ``_combineRuleAndType(rule, ruleInterface)`` - Combine rule and ruleInterface
+  information
 * ``_computeRulesParams(pathLocator)`` - Compute parameters for rule
 * ``_getRule(rules, ruleInterface)`` - Get a rule
-* ``_getRuleSettingParts(value, type)`` - Extract a datastructure from rule type description
+* ``_getRuleSettingParts(value, type)`` - Extract a datastructure from rule type
+  description
 
 Located in::
 
@@ -228,7 +280,8 @@ Shared functions for order views.
 
 * ``computeOrderLetter(amount)`` - Get letterball letter based on amount
 * ``getOrderLetterColor(amount)`` - Get letterball color based on amount
-* ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes from (invoice/order) actions
+* ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes
+  from (invoice/order) actions
 
 Located in::
 
@@ -239,15 +292,40 @@ Located in::
 
 Shared functions for article views in purchase directory.
 
+* ``getArticlesSearchParams(pathLocator)`` - Get request parameters for article
+  search
+* ``getSupplierListParams(pathLocator)`` - Get request parameter for supplier
+  list
+
+Located in::
+
+	app/views/purchase/articles/helper-behavior.html
+
 ``cz.behaviors.PurchaseInvoicesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shared functions for invoice views in purchase directory.
 
+* ``computeInvoiceLetter(amount)`` - Get letterball letter based on amount
+* ``getInvoiceLetterColor(amount)`` - Get letterball color based on amount
+* ``getInvoiceStatus(header)``  - Get status style class from invoice header
+* ``getInvoiceText(header)`` - Get status text from invoice header
+* ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes
+  from actions
+
+Located in::
+
+	app/views/purchase/invoices/helper-behavior.html
+
 ``cz.behaviors.PurchaseSuppliersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Shared functions for supplier views in purchase directory.
+Shared functions for supplier views in purchase directory. Provides shared
+arrays at the moment.
+
+Located in::
+
+	app/views/purchase/suppliers/helper-behavior.html
 
 ``cz.behaviors.SimpleActionPerformer``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
