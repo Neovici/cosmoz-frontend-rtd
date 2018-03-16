@@ -17,8 +17,8 @@ View imports
 All views should import the ``views/imports.html`` file which imports the most
 common dependencies required for the views.
 
-View Behaviors
---------------
+View behaviors reference
+------------------------
 
 ``Cosmoz.CommonBehaviors``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ This is a meta behavior that links to other behaviors:
 
 Located in::
 
-	app/bower_components/cosmoz-behaviors/cosmoz-behaviors.html
+  app/bower_components/cosmoz-behaviors/cosmoz-behaviors.html
 
 ``Cosmoz.DateHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +50,7 @@ Provides date management functions.
 
 Located in::
 
-	app/bower_components/cosmoz-behaviors/cosmoz-datehelper-behavior.html
+  app/bower_components/cosmoz-behaviors/cosmoz-datehelper-behavior.html
 
 ``Cosmoz.MoneyHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,7 @@ Currency handling functions.
 
 Located in::
 
-	app/bower_components/cosmoz-behaviors/cosmoz-moneyhelper-behavior.html
+  app/bower_components/cosmoz-behaviors/cosmoz-moneyhelper-behavior.html
 
 ``Cosmoz.TabbedBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ Cosmoz tabs functions.
 
 Located in::
 
-	app/bower_components/cosmoz-tabs/cosmoz-tabbed-behavior.html
+  app/bower_components/cosmoz-tabs/cosmoz-tabbed-behavior.html
 
 ``Cosmoz.TemplateHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ Various generic template handling functions.
 
 Located in::
 
-	app/bower_components/cosmoz-behaviors/cosmoz-templatehelper-behavior.html
+  app/bower_components/cosmoz-behaviors/cosmoz-templatehelper-behavior.html
 
 ``Cosmoz.TranslatableBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +117,7 @@ Functions related to translation.
 
 Located in::
 
-	app/bower_components/cosmoz-i18next/cosmoz-i18next.js
+  app/bower_components/cosmoz-i18next/cosmoz-i18next.js
 
 ``Cosmoz.ViewInfoBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,7 +127,7 @@ Located in::
 
 Located in::
 
-	app/bower_components/cosmoz-viewinfo/cosmoz-viewinfo.js
+  app/bower_components/cosmoz-viewinfo/cosmoz-viewinfo.js
 
 ``cz.behaviors.AdministrationGroupsUsersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,7 +139,7 @@ Shared functions for user and group administration views.
 
 Located in::
 
-	app/views/general/groups-users-helper-behavior.html
+  app/views/general/groups-users-helper-behavior.html
 
 ``cz.behaviors.AdministrationReasonCodesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,7 +151,7 @@ Shared functions for reason code administration views.
 
 Located in::
 
-	app/views/administration/reasoncodes/helper-behavior.html
+  app/views/administration/reasoncodes/helper-behavior.html
 
 ``cz.behaviors.AdministrationRolesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,7 +171,7 @@ Shared functions for role administration views.
 
 Located in::
 
-	app/views/administration/roles/helper-behavior.html
+  app/views/administration/roles/helper-behavior.html
 
 ``cz.behaviors.GeneralAgreementsArticlesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,7 +182,7 @@ Functions shared between agreement and article views.
 
 Located in::
 
-	app/views/general/agreements-articles-helper-behavior.html
+  app/views/general/agreements-articles-helper-behavior.html
 
 ``cz.behaviors.GeneralAgreementsPriceListsHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,7 +194,7 @@ Functions shared between agreement and price list views.
 
 Located in::
 
-	app/views/purchase/suppliers/helper-behavior.html
+  app/views/purchase/suppliers/helper-behavior.html
 
 ``cz.behaviors.GeneralArticlesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,7 +208,7 @@ Shared functions for article views.
 
 Located in::
 
-	app/views/general/articles-helper-behavior.html
+  app/views/general/articles-helper-behavior.html
 
 ``cz.behaviors.GeneralArticlesProductGroupsHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -220,7 +220,7 @@ Functions shared between article and product group views.
 
 Located in::
 
-	app/views/general/articles-product-groups-helper-behavior.html
+  app/views/general/articles-product-groups-helper-behavior.html
 
 ``cz.behaviors.GeneralInvoicesOrdersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -240,17 +240,48 @@ Functions shared between invoice and order views.
 
 Located in::
 
-	app/views/general/invoices-orders-helper-behavior.html
+  app/views/general/invoices-orders-helper-behavior.html
 
 ``cz.behaviors.GeneralInvoicesOrdersMatchingHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Functions shared between invoice and order matching views.
 
+* ``batchResponsesChanged(newResponses)`` - Set matchSuggestions property to
+  newResponses if it has a length
+* ``computeBottomBarActive(numSelectedRows1, numSelectedRows2, selectedTab)`` -
+  Get bottom bar state depending on selected rows amount and current tab
+* ``computeCustomSuggestParams(fieldName, fieldValue, baseOtsQueryParams, run =
+  true)`` - Calculate request parameters for custom suggestions
+* ``computeLoadingMessage(rowQueueNotify)`` - Compose a loading message for
+  match call
+* ``getPotentialAmount(selectedRowSuggestionsNotify, matchSuggestionsNotify,
+  unmatchedAmount, unformatted)`` - Get selected amount that is possible to
+  match
+* ``getPotentialQuantity(selectedRowSuggestionsNotify, unmatchedQuantity)`` {
+* ``getProgress(part, total)`` - Get percentage value for progress bars
+* ``getStartValue(part, total)`` - Get the start value for progress bars
+* ``showFilterBasedOnAvailableValues(rowNotify, rowValueProperty, suggestions,
+  comparison)`` - Find out if a filter should be shown based on available rows
+* ``showPackageUnitPriceFilter(selectedRowSuggestionsNotify,
+  matchSuggestionsNotify, matchSuggestionsRowObjectProperty,
+  matchSuggestionsSuggestionsProperty, rowProperty, rowSuggestionsProperty)`` -
+  Find out if package unit price filter should be shown
+
+Located in:
+
+  app/views/general/invoices-orders-matching-helper-behavior.html
+
 ``cz.behaviors.GeneralRulesSuppliersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Functions shared between rule and supplier views.
+
+* ``isPathLocatorAncestor(pathLocatorAncestor, pathLocator)`` - Find out if one path locator is an ancestor of another path locator
+
+Located in::
+
+  app/views/general/rules-suppliers-helper-behavior.html
 
 ``cz.behaviors.GeneralRulesViewHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -266,12 +297,12 @@ Shared functions for rule views.
 
 Located in::
 
-	app/views/general/rules/helper-behavior.html
+  app/views/general/rules/helper-behavior.html
 
 ``cz.behaviors.OmnitableSearchHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Omnitable search (OTS) Shared functions.
+Omnitable search (OTS) shared functions.
 
 ``cz.behaviors.OrderHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -285,7 +316,7 @@ Shared functions for order views.
 
 Located in::
 
-	app/views/purchase/orders/helper-behavior.html
+  app/views/purchase/orders/helper-behavior.html
 
 ``cz.behaviors.PurchaseArticlesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -299,7 +330,7 @@ Shared functions for article views in purchase directory.
 
 Located in::
 
-	app/views/purchase/articles/helper-behavior.html
+  app/views/purchase/articles/helper-behavior.html
 
 ``cz.behaviors.PurchaseInvoicesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -315,7 +346,7 @@ Shared functions for invoice views in purchase directory.
 
 Located in::
 
-	app/views/purchase/invoices/helper-behavior.html
+  app/views/purchase/invoices/helper-behavior.html
 
 ``cz.behaviors.PurchaseSuppliersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -325,12 +356,19 @@ arrays at the moment.
 
 Located in::
 
-	app/views/purchase/suppliers/helper-behavior.html
+  app/views/purchase/suppliers/helper-behavior.html
 
 ``cz.behaviors.SimpleActionPerformer``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shared functions for simple actions.
+
+* ``filterSimpleActions(action)`` - Get the simpleAction part of an action
+* ``getSimpleRowActions(rows, numRows = 0)`` - Iterate invoice/order rows and get actions matching simple row action criterias
+
+Located in::
+
+  app/polymer/cz-actions/cz-simple-action-performer-behavior.html
 
 ``cz.behaviors.Template``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
