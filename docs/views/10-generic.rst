@@ -4,17 +4,6 @@ View overview
 Views are custom elements named after their URL, as described in
 :ref:`url-view-structure`.
 
-The views are dependant on several view-generic behaviors. Any
-view-genericbehavior or function should be implemented in a common
-Template/View behavior or maybe enriched (like some things are today) by the
-:ref:`cosmoz-page-router`.
-
-.. note ::
-
-  Tip! The file locations presented in this reference are directly openable in
-  :ref:`vscode` if you have opened the repository root folder in the editor,
-  just run the path in the command palette (``Ctrl + Shift + P``).
-
 .. _view-imports:
 
 View imports
@@ -26,9 +15,20 @@ common dependencies required for the views.
 View behavior reference
 -----------------------
 
+The views are dependant on several view-generic behaviors. Any
+generic view behavior or function should be implemented in a common
+Template/View behavior or maybe enriched (like some things are today) by the
+:ref:`cosmoz-page-router`.
+
 Internal functions (those beginning with and underscore) are not listed here,
 unless the behavior only has internal functions (which may indicate that the
-functions are not correctly named in that behavior).
+functions are not correctly named in the behavior).
+
+.. note ::
+
+  Tip! The file locations presented in this reference are directly openable in
+  :ref:`vscode` if you have opened the repository root folder in the editor,
+  just run the path in the command palette (``Ctrl + Shift + P``).
 
 ``Cosmoz.CommonBehaviors``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
