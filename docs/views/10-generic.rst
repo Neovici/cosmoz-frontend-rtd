@@ -9,6 +9,12 @@ view-genericbehavior or function should be implemented in a common
 Template/View behavior or maybe enriched (like some things are today) by the
 :ref:`cosmoz-page-router`.
 
+.. note ::
+
+  Tip! The file locations presented in this reference are directly openable in
+  :ref:`vscode` if you have opened the repository root folder in the editor, just
+  run the path in the command palette (``Ctrl + Shift + P``).
+
 .. _view-imports:
 
 View imports
@@ -17,15 +23,21 @@ View imports
 All views should import the ``views/imports.html`` file which imports the most
 common dependencies required for the views.
 
-View behaviors reference
-------------------------
+View behavior reference
+-----------------------
+
+Internal functions (those beginning with and underscore) are not listed here,
+unless the behavior only has internal functions (which may indicate that the
+functions are not correctly named in that behavior).
 
 ``Cosmoz.CommonBehaviors``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is a meta behavior that links to other behaviors:
-``Cosmoz.DateHelperBehavior``, ``Cosmoz.MoneyHelperBehavior`` and
-``Cosmoz.TemplateHelperBehavior``.
+
+* ``Cosmoz.DateHelperBehavior``
+* ``Cosmoz.MoneyHelperBehavior``
+* ``Cosmoz.TemplateHelperBehavior``
 
 Located in::
 
@@ -277,7 +289,8 @@ Located in:
 
 Functions shared between rule and supplier views.
 
-* ``isPathLocatorAncestor(pathLocatorAncestor, pathLocator)`` - Find out if one path locator is an ancestor of another path locator
+* ``isPathLocatorAncestor(pathLocatorAncestor, pathLocator)`` - Find out if one
+  path locator is an ancestor of another path locator
 
 Located in::
 
@@ -303,6 +316,32 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Omnitable search (OTS) shared functions.
+
+* ``_capitalizeFirstLetter(string)`` - Capitalize the first letter of a string
+* ``_computeBaseOtsQueryParams(pathLocator, myItemsOnly, baseSearchParams,
+  filtersNotify)`` - Get parameters for the base request call
+* ``_computeOtsExternalValues(local, baseOtsSearchParams)`` - Decide whether
+  external values should be used or not
+* ``_computeOtsOurReferenceSuggestParams(baseOtsQueryParams, query)`` - Get
+  parameters for our reference suggestion call
+* ``_computeOtsPathLocatorSuggestParams(baseOtsQueryParams)`` - Get parameters
+  for path locator suggestion call
+* ``_computeOtsSuggestParams(fieldName, baseOtsQueryParams, run = true)`` - Get
+  parameters for a large amount of suggestion calls
+* ``_computeOtsCategorySuggestParams(baseOtsQueryParams, categoryQuery)`` - Get
+  parameters for category suggestion call
+* ``_computeOtsSuppliersSuggestParams(baseOtsQueryParams, sellerPartyName,
+  run)`` - Get parameters for supplier suggestion call
+* ``_getISODateString(date)`` - Convert a date to an ISO date string
+* ``_getLocalISODateString(date)`` - Convert a date to a local ISO date string
+* ``_otsIsMoreRestrictive(origParams, newParams)`` - Decide whether omnitable
+  search should be more restrictive or not
+* ``_otsObserveSearchParams(viewParams, userParams, subPath)`` - Observer for
+  user and view parameters that sets search parameters
+
+Located::
+
+  app/views/general/omnitablesearch-helper-behavior.html
 
 ``cz.behaviors.OrderHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -351,7 +390,7 @@ Located in::
 ``cz.behaviors.PurchaseSuppliersHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Shared functions for supplier views in purchase directory. Provides shared
+Shared functions for supplier views in purchase directory. Provides only shared
 arrays at the moment.
 
 Located in::
@@ -364,7 +403,8 @@ Located in::
 Shared functions for simple actions.
 
 * ``filterSimpleActions(action)`` - Get the simpleAction part of an action
-* ``getSimpleRowActions(rows, numRows = 0)`` - Iterate invoice/order rows and get actions matching simple row action criterias
+* ``getSimpleRowActions(rows, numRows = 0)`` - Iterate invoice/order rows and
+  get actions matching simple row action criterias
 
 Located in::
 
@@ -373,4 +413,22 @@ Located in::
 ``cz.behaviors.Template``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. todo:: Document view behaviors
+* ``created()``
+* ``attached()``
+* ``detached()``
+* ``deepEquals(a, b)`` - Compare two arrays or objects deeply
+* ``linkToCurrentPage(params, hashhash)`` - Construct a link to the current
+  page
+* ``findBranchById(branchId)`` - Recursively search cz.boot.organization for a
+  branchId
+* ``hasAnyRoleFunction(items)`` - Find out if any item has the required
+  function for it
+* ``hasRoleFunction(roleFunction, cz = this.cz)`` - Find out if user has a
+  role function
+* ``openDataDialog(event)`` - Generic helper to use 'data-dialog' attribute to
+  find element ID of dialog to open
+* ``validateForm(event, detail)`` - Validate data-dialog form
+
+Located in::
+
+  app/polymer/cz-behaviors/cz-behaviors.js
