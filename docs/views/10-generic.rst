@@ -12,8 +12,8 @@ Template/View behavior or maybe enriched (like some things are today) by the
 .. note ::
 
   Tip! The file locations presented in this reference are directly openable in
-  :ref:`vscode` if you have opened the repository root folder in the editor, just
-  run the path in the command palette (``Ctrl + Shift + P``).
+  :ref:`vscode` if you have opened the repository root folder in the editor,
+  just run the path in the command palette (``Ctrl + Shift + P``).
 
 .. _view-imports:
 
@@ -106,7 +106,7 @@ Various generic template handling functions.
 * ``ifElse(iftrue, result, elseresult)`` - If iftrue is true, return result,
   otherwise return elseresult
 * ``inArray(item, array)`` - Check if item exists in array
-* ``isEmpty(obj)`` - Check if variable is undefined, null, empty Array list
+* ``isEmpty(obj)`` - Check if variable is undefined, null or empty Array list
 * ``isEqual(arg1, arg2)`` - Check equality of the arguments
 * ``toFixed(number, fixval)`` - Formats a number using fixed-point notation
 
@@ -239,7 +239,7 @@ Located in::
 
 Functions shared between invoice and order views.
 
-* ``getDiffRows(rows)`` - get rows where match status is not fully matched
+* ``getDiffRows(rows)`` - Get rows where match status is not fully matched
 * ``getHistoryBadgeData(history)`` - Get the number of comments in history data
 * ``getMatchInfo(document)`` - Get matching details by looking on both document
   header and rows
@@ -270,9 +270,10 @@ Functions shared between invoice and order matching views.
 * ``getPotentialAmount(selectedRowSuggestionsNotify, matchSuggestionsNotify,
   unmatchedAmount, unformatted)`` - Get selected amount that is possible to
   match
-* ``getPotentialQuantity(selectedRowSuggestionsNotify, unmatchedQuantity)`` {
-* ``getProgress(part, total)`` - Get percentage value for progress bars
-* ``getStartValue(part, total)`` - Get the start value for progress bars
+* ``getPotentialQuantity(selectedRowSuggestionsNotify, unmatchedQuantity)`` -
+  Get selected quantity that is possible to match
+* ``getProgress(part, total)`` - Get percentage value for a progress bar
+* ``getStartValue(part, total)`` - Get the start value for a progress bar
 * ``showFilterBasedOnAvailableValues(rowNotify, rowValueProperty, suggestions,
   comparison)`` - Find out if a filter should be shown based on available rows
 * ``showPackageUnitPriceFilter(selectedRowSuggestionsNotify,
@@ -280,7 +281,7 @@ Functions shared between invoice and order matching views.
   matchSuggestionsSuggestionsProperty, rowProperty, rowSuggestionsProperty)`` -
   Find out if package unit price filter should be shown
 
-Located in:
+Located in::
 
   app/views/general/invoices-orders-matching-helper-behavior.html
 
@@ -339,7 +340,7 @@ Omnitable search (OTS) shared functions.
 * ``_otsObserveSearchParams(viewParams, userParams, subPath)`` - Observer for
   user and view parameters that sets search parameters
 
-Located::
+Located in::
 
   app/views/general/omnitablesearch-helper-behavior.html
 
