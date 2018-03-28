@@ -39,6 +39,10 @@ This is a meta behavior that links to other behaviors:
 * ``Cosmoz.MoneyHelperBehavior``
 * ``Cosmoz.TemplateHelperBehavior``
 
+.. todo::
+
+  TODO - Webcomponents.org documentation?
+
 Located in::
 
   app/bower_components/cosmoz-behaviors/cosmoz-behaviors.html
@@ -60,6 +64,10 @@ Provides date management functions.
 * ``timeago(date)`` - Get human readable string describing date's difference
   from now
 
+.. todo::
+
+  TODO - Webcomponents.org documentation?
+
 Located in::
 
   app/bower_components/cosmoz-behaviors/cosmoz-datehelper-behavior.html
@@ -78,6 +86,10 @@ Currency handling functions.
 * ``unformatRenderedAmount(amount)`` - Remove currency formatting including
   decimal separator and currency symbol
 
+.. todo::
+
+  TODO - Webcomponents.org documentation?
+
 Located in::
 
   app/bower_components/cosmoz-behaviors/cosmoz-moneyhelper-behavior.html
@@ -89,6 +101,10 @@ Cosmoz tabs functions.
 
 * ``getIcon()`` - Returns the element's icon
 * ``getIconStyle()`` - Returns the element's icon style
+
+.. todo::
+
+  TODO - Webcomponents.org documentation?
 
 Located in::
 
@@ -110,6 +126,10 @@ Various generic template handling functions.
 * ``isEqual(arg1, arg2)`` - Check equality of the arguments
 * ``toFixed(number, fixval)`` - Formats a number using fixed-point notation
 
+.. todo::
+
+  TODO - Webcomponents.org documentation?
+
 Located in::
 
   app/bower_components/cosmoz-behaviors/cosmoz-templatehelper-behavior.html
@@ -127,6 +147,10 @@ Functions related to translation.
   with interpolation
 * ``pgettext(context, key)`` - Context translation with interpolation
 
+.. todo::
+
+  TODO - Webcomponents.org documentation?
+
 Located in::
 
   app/bower_components/cosmoz-i18next/cosmoz-i18next.js
@@ -136,6 +160,10 @@ Located in::
 
 * ``attached()``
 * ``detached()``
+
+.. todo::
+
+  TODO - Webcomponents.org documentation?
 
 Located in::
 
@@ -149,6 +177,10 @@ Shared functions for user and group administration views.
 * ``confirmRequestCall(requestName, confirmationText)`` - Show a confirmation
   dialog before running a cz-apicall request
 
+.. seealso::
+
+  `cz.behaviors.AdministrationGroupsUsersHelperBehavior on localhost <http://localhost:3000/views/general/groups-users-helper-behavior-docs.html>`_
+
 Located in::
 
   app/views/general/groups-users-helper-behavior.html
@@ -160,6 +192,10 @@ Shared functions for reason code administration views.
 
 * ``openAddActionToReasonCodeDialog(saveSettings)`` - Render a dialog where the
   user can add actions to reason codes
+
+.. seealso::
+
+  `cz.behaviors.AdministrationReasonCodesHelperBehavior on localhost <http://localhost:3000/views/administration/reasoncodes/helper-behavior-docs.html>`_
 
 Located in::
 
@@ -181,6 +217,10 @@ Shared functions for role administration views.
 * ``removeFunctionsFromRoleButtonClick()`` - Render a dialog where user can
   remove functions from a role
 
+.. seealso::
+
+  `cz.behaviors.AdministrationRolesHelperBehavior on localhost <http://localhost:3000/views/administration/roles/helper-behavior-docs.html>`_
+
 Located in::
 
   app/views/administration/roles/helper-behavior.html
@@ -191,6 +231,10 @@ Located in::
 Functions shared between agreement and article views.
 
 * ``computeSuppliers(supplierListData)`` - Remap supplier data
+
+.. seealso::
+
+  `cz.behaviors.GeneralAgreementsArticlesHelperBehavior on localhost <http://localhost:3000/views/general/agreements-articles-helper-behavior-docs.html>`_
 
 Located in::
 
@@ -204,9 +248,13 @@ Functions shared between agreement and price list views.
 * ``hasAction(item, actionId)`` - Find out if an item has one specific action
   based on id
 
+.. seealso::
+
+  `cz.behaviors.GeneralAgreementsPriceListsHelperBehavior on localhost <http://localhost:3000/views/general/agreements-price-lists-helper-behavior-docs.html>`_
+
 Located in::
 
-  app/views/purchase/suppliers/helper-behavior.html
+  app/views/general/agreements-price-lists-helper-behavior.html
 
 ``cz.behaviors.GeneralArticlesHelperBehavior``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,6 +265,10 @@ Shared functions for article views.
   article
 * ``updateArticle(fields)`` - Update article properties in the view and do a
   request do update an article
+
+.. seealso::
+
+  `cz.behaviors.GeneralArticlesHelperBehavior on localhost <http://localhost:3000/views/general/articles-helper-behavior-docs.html>`_
 
 Located in::
 
@@ -229,6 +281,10 @@ Functions shared between article and product group views.
 
 * ``mapProductGroupHierarchy(contents)`` - Iterate contents and remap data so
   the label and code are returned
+
+.. seealso::
+
+  `cz.behaviors.GeneralArticlesProductGroupsHelperBehavior on localhost <http://localhost:3000/views/general/articles-product-groups-helper-behavior-docs.html>`_
 
 Located in::
 
@@ -249,6 +305,10 @@ Functions shared between invoice and order views.
   present
 * ``renderAbsMoney(amount)`` - Get the absolute value of an amount formatted as
   money with currency
+
+.. seealso::
+
+  `cz.behaviors.GeneralInvoicesOrdersHelperBehavior on localhost <http://localhost:3000/views/general/invoices-orders-helper-behavior-docs.html>`_
 
 Located in::
 
@@ -281,6 +341,10 @@ Functions shared between invoice and order matching views.
   matchSuggestionsSuggestionsProperty, rowProperty, rowSuggestionsProperty)`` -
   Find out if package unit price filter should be shown
 
+.. seealso::
+
+  `cz.behaviors.GeneralInvoicesOrdersMatchingHelperBehavior on localhost <http://localhost:3000/views/general/invoices-orders-matching-helper-behavior-docs.html>`_
+
 Located in::
 
   app/views/general/invoices-orders-matching-helper-behavior.html
@@ -292,6 +356,10 @@ Functions shared between rule and supplier views.
 
 * ``isPathLocatorAncestor(pathLocatorAncestor, pathLocator)`` - Find out if one
   path locator is an ancestor of another path locator
+
+.. seealso::
+
+  `cz.behaviors.GeneralRulesSuppliersHelperBehavior on localhost <http://localhost:3000/views/general/rules-suppliers-helper-behavior-docs.html>`_
 
 Located in::
 
@@ -308,6 +376,10 @@ Shared functions for rule views.
 * ``_getRule(rules, ruleInterface)`` - Get a rule
 * ``_getRuleSettingParts(value, type)`` - Extract a datastructure from rule type
   description
+
+.. seealso::
+
+  `cz.behaviors.GeneralRulesViewHelperBehavior on localhost <http://localhost:3000/views/general/rules/helper-behavior-docs.html>`_
 
 Located in::
 
@@ -340,6 +412,10 @@ Omnitable search (OTS) shared functions.
 * ``_otsObserveSearchParams(viewParams, userParams, subPath)`` - Observer for
   user and view parameters that sets search parameters
 
+.. seealso::
+
+  `cz.behaviors.OmnitableSearchHelperBehavior on localhost <http://localhost:3000/views/general/omnitablesearch-helper-behavior-docs.html>`_
+
 Located in::
 
   app/views/general/omnitablesearch-helper-behavior.html
@@ -354,6 +430,10 @@ Shared functions for order views.
 * ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes
   from (invoice/order) actions
 
+.. seealso::
+
+  `cz.behaviors.OrderHelperBehavior on localhost <http://localhost:3000/views/purchase/orders/helper-behavior-docs.html>`_
+
 Located in::
 
   app/views/purchase/orders/helper-behavior.html
@@ -367,6 +447,10 @@ Shared functions for article views in purchase directory.
   search
 * ``getSupplierListParams(pathLocator)`` - Get request parameter for supplier
   list
+
+.. seealso::
+
+  `cz.behaviors.PurchaseArticlesHelperBehavior on localhost <http://localhost:3000/views/purchase/articles/helper-behavior-docs.html>`_
 
 Located in::
 
@@ -384,6 +468,10 @@ Shared functions for invoice views in purchase directory.
 * ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes
   from actions
 
+.. seealso::
+
+  `cz.behaviors.PurchaseInvoicesHelperBehavior on localhost <http://localhost:3000/views/purchase/invoices/helper-behavior-docs.html>`_
+
 Located in::
 
   app/views/purchase/invoices/helper-behavior.html
@@ -393,6 +481,10 @@ Located in::
 
 Shared functions for supplier views in purchase directory. Provides only shared
 arrays at the moment.
+
+.. seealso::
+
+  `cz.behaviors.PurchaseSuppliersHelperBehavior on localhost <http://localhost:3000/views/purchase/suppliers/helper-behavior-docs.html#cz.behaviors.PurchaseSuppliersHelperBehavior>`_
 
 Located in::
 
@@ -406,6 +498,10 @@ Shared functions for simple actions.
 * ``filterSimpleActions(action)`` - Get the simpleAction part of an action
 * ``getSimpleRowActions(rows, numRows = 0)`` - Iterate invoice/order rows and
   get actions matching simple row action criterias
+
+.. seealso::
+
+  `cz.behaviors.SimpleActionPerformer on localhost <http://localhost:3000/polymer/cz-actions/index.html>`_
 
 Located in::
 
@@ -429,6 +525,10 @@ Located in::
 * ``openDataDialog(event)`` - Generic helper to use 'data-dialog' attribute to
   find element ID of dialog to open
 * ``validateForm(event, detail)`` - Validate data-dialog form
+
+.. seealso::
+
+  `cz.behaviors.Template on localhost <http://localhost:3000/polymer/cz-behaviors/index.html#cz.behaviors.TemplateViewCommonBehavior>`_
 
 Located in::
 
