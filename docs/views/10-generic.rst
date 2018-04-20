@@ -174,9 +174,6 @@ Located in::
 
 Shared functions for user and group administration views.
 
-* ``confirmRequestCall(requestName, confirmationText)`` - Show a confirmation
-  dialog before running a cz-apicall request
-
 .. seealso::
 
   `cz.behaviors.AdministrationGroupsUsersHelperBehavior on localhost <http://localhost:3000/views/general/groups-users-helper-behavior-docs.html>`_
@@ -189,9 +186,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shared functions for reason code administration views.
-
-* ``openAddActionToReasonCodeDialog(saveSettings)`` - Render a dialog where the
-  user can add actions to reason codes
 
 .. seealso::
 
@@ -206,17 +200,6 @@ Located in::
 
 Shared functions for role administration views.
 
-* ``getAvailableFunctions(allFunctions)`` - Get functions available for adding
-  to a role based on a list of all functions and omit those already in use
-* ``isAbleToCreateOrUpdateRole(roleData)`` - Verify if role can be created or
-  updated
-* ``mangleFunctionsForOmnitable(functions)`` - Prepare function list for display
-  in a cosmoz-omnitable
-* ``openAddFunctionsDialog()`` - Render a dialog where user can add functions to
-  a role
-* ``removeFunctionsFromRoleButtonClick()`` - Render a dialog where user can
-  remove functions from a role
-
 .. seealso::
 
   `cz.behaviors.AdministrationRolesHelperBehavior on localhost <http://localhost:3000/views/administration/roles/helper-behavior-docs.html>`_
@@ -229,8 +212,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Functions shared between agreement and article views.
-
-* ``computeSuppliers(supplierListData)`` - Remap supplier data
 
 .. seealso::
 
@@ -245,9 +226,6 @@ Located in::
 
 Functions shared between agreement and price list views.
 
-* ``hasAction(item, actionId)`` - Find out if an item has one specific action
-  based on id
-
 .. seealso::
 
   `cz.behaviors.GeneralAgreementsPriceListsHelperBehavior on localhost <http://localhost:3000/views/general/agreements-price-lists-helper-behavior-docs.html>`_
@@ -260,11 +238,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shared functions for article views.
-
-* ``createArticle()`` - Use properties in the view to do a request to create an
-  article
-* ``updateArticle(fields)`` - Update article properties in the view and do a
-  request do update an article
 
 .. seealso::
 
@@ -279,9 +252,6 @@ Located in::
 
 Functions shared between article and product group views.
 
-* ``mapProductGroupHierarchy(contents)`` - Iterate contents and remap data so
-  the label and code are returned
-
 .. seealso::
 
   `cz.behaviors.GeneralArticlesProductGroupsHelperBehavior on localhost <http://localhost:3000/views/general/articles-product-groups-helper-behavior-docs.html>`_
@@ -294,17 +264,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Functions shared between invoice and order views.
-
-* ``getDiffRows(rows)`` - Get rows where match status is not fully matched
-* ``getHistoryBadgeData(history)`` - Get the number of comments in history data
-* ``getMatchInfo(document)`` - Get matching details by looking on both document
-  header and rows
-* ``getReasonsFromSelectedRowsActions(requestedAction, rowsNotify)`` - Get
-  reason codes from actions on invoice/order rows
-* ``hasRowAction(rowsNotify, actionId)`` - Check if rows has an action id
-  present
-* ``renderAbsMoney(amount)`` - Get the absolute value of an amount formatted as
-  money with currency
 
 .. seealso::
 
@@ -319,28 +278,6 @@ Located in::
 
 Functions shared between invoice and order matching views.
 
-* ``batchResponsesChanged(newResponses)`` - Set matchSuggestions property to
-  newResponses if it has a length
-* ``computeBottomBarActive(numSelectedRows1, numSelectedRows2, selectedTab)`` -
-  Get bottom bar state depending on selected rows amount and current tab
-* ``computeCustomSuggestParams(fieldName, fieldValue, baseOtsQueryParams, run =
-  true)`` - Calculate request parameters for custom suggestions
-* ``computeLoadingMessage(rowQueueNotify)`` - Compose a loading message for
-  match call
-* ``getPotentialAmount(selectedRowSuggestionsNotify, matchSuggestionsNotify,
-  unmatchedAmount, unformatted)`` - Get selected amount that is possible to
-  match
-* ``getPotentialQuantity(selectedRowSuggestionsNotify, unmatchedQuantity)`` -
-  Get selected quantity that is possible to match
-* ``getProgress(part, total)`` - Get percentage value for a progress bar
-* ``getStartValue(part, total)`` - Get the start value for a progress bar
-* ``showFilterBasedOnAvailableValues(rowNotify, rowValueProperty, suggestions,
-  comparison)`` - Find out if a filter should be shown based on available rows
-* ``showPackageUnitPriceFilter(selectedRowSuggestionsNotify,
-  matchSuggestionsNotify, matchSuggestionsRowObjectProperty,
-  matchSuggestionsSuggestionsProperty, rowProperty, rowSuggestionsProperty)`` -
-  Find out if package unit price filter should be shown
-
 .. seealso::
 
   `cz.behaviors.GeneralInvoicesOrdersMatchingHelperBehavior on localhost <http://localhost:3000/views/general/invoices-orders-matching-helper-behavior-docs.html>`_
@@ -353,9 +290,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Functions shared between rule and supplier views.
-
-* ``isPathLocatorAncestor(pathLocatorAncestor, pathLocator)`` - Find out if one
-  path locator is an ancestor of another path locator
 
 .. seealso::
 
@@ -370,13 +304,6 @@ Located in::
 
 Shared functions for rule views.
 
-* ``_combineRuleAndType(rule, ruleInterface)`` - Combine rule and ruleInterface
-  information
-* ``_computeRulesParams(pathLocator)`` - Compute parameters for rule
-* ``_getRule(rules, ruleInterface)`` - Get a rule
-* ``_getRuleSettingParts(value, type)`` - Extract a datastructure from rule type
-  description
-
 .. seealso::
 
   `cz.behaviors.GeneralRulesViewHelperBehavior on localhost <http://localhost:3000/views/general/rules/helper-behavior-docs.html>`_
@@ -389,28 +316,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Omnitable search (OTS) shared functions.
-
-* ``_capitalizeFirstLetter(string)`` - Capitalize the first letter of a string
-* ``_computeBaseOtsQueryParams(pathLocator, myItemsOnly, baseSearchParams,
-  filtersNotify)`` - Get parameters for the base request call
-* ``_computeOtsExternalValues(local, baseOtsSearchParams)`` - Decide whether
-  external values should be used or not
-* ``_computeOtsOurReferenceSuggestParams(baseOtsQueryParams, query)`` - Get
-  parameters for our reference suggestion call
-* ``_computeOtsPathLocatorSuggestParams(baseOtsQueryParams)`` - Get parameters
-  for path locator suggestion call
-* ``_computeOtsSuggestParams(fieldName, baseOtsQueryParams, run = true)`` - Get
-  parameters for a large amount of suggestion calls
-* ``_computeOtsCategorySuggestParams(baseOtsQueryParams, categoryQuery)`` - Get
-  parameters for category suggestion call
-* ``_computeOtsSuppliersSuggestParams(baseOtsQueryParams, sellerPartyName,
-  run)`` - Get parameters for supplier suggestion call
-* ``_getISODateString(date)`` - Convert a date to an ISO date string
-* ``_getLocalISODateString(date)`` - Convert a date to a local ISO date string
-* ``_otsIsMoreRestrictive(origParams, newParams)`` - Decide whether omnitable
-  search should be more restrictive or not
-* ``_otsObserveSearchParams(viewParams, userParams, subPath)`` - Observer for
-  user and view parameters that sets search parameters
 
 .. seealso::
 
@@ -425,11 +330,6 @@ Located in::
 
 Shared functions for order views.
 
-* ``computeOrderLetter(amount)`` - Get letterball letter based on amount
-* ``getOrderLetterColor(amount)`` - Get letterball color based on amount
-* ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes
-  from (invoice/order) actions
-
 .. seealso::
 
   `cz.behaviors.OrderHelperBehavior on localhost <http://localhost:3000/views/purchase/orders/helper-behavior-docs.html>`_
@@ -443,11 +343,6 @@ Located in::
 
 Shared functions for article views in purchase directory.
 
-* ``getArticlesSearchParams(pathLocator)`` - Get request parameters for article
-  search
-* ``getSupplierListParams(pathLocator)`` - Get request parameter for supplier
-  list
-
 .. seealso::
 
   `cz.behaviors.PurchaseArticlesHelperBehavior on localhost <http://localhost:3000/views/purchase/articles/helper-behavior-docs.html>`_
@@ -460,13 +355,6 @@ Located in::
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Shared functions for invoice views in purchase directory.
-
-* ``computeInvoiceLetter(amount)`` - Get letterball letter based on amount
-* ``getInvoiceLetterColor(amount)`` - Get letterball color based on amount
-* ``getInvoiceStatus(header)``  - Get status style class from invoice header
-* ``getInvoiceText(header)`` - Get status text from invoice header
-* ``getReasonsFromActions(requestedAction, actionsBased)`` - Get reason codes
-  from actions
 
 .. seealso::
 
@@ -495,10 +383,6 @@ Located in::
 
 Shared functions for simple actions.
 
-* ``filterSimpleActions(action)`` - Get the simpleAction part of an action
-* ``getSimpleRowActions(rows, numRows = 0)`` - Iterate invoice/order rows and
-  get actions matching simple row action criterias
-
 .. seealso::
 
   `cz.behaviors.SimpleActionPerformer on localhost <http://localhost:3000/polymer/cz-actions/index.html>`_
@@ -509,22 +393,6 @@ Located in::
 
 ``cz.behaviors.Template``
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* ``created()``
-* ``attached()``
-* ``detached()``
-* ``deepEquals(a, b)`` - Compare two arrays or objects deeply
-* ``linkToCurrentPage(params, hashhash)`` - Construct a link to the current
-  page
-* ``findBranchById(branchId)`` - Recursively search cz.boot.organization for a
-  branchId
-* ``hasAnyRoleFunction(items)`` - Find out if any item has the required
-  function for it
-* ``hasRoleFunction(roleFunction, cz = this.cz)`` - Find out if user has a
-  role function
-* ``openDataDialog(event)`` - Generic helper to use 'data-dialog' attribute to
-  find element ID of dialog to open
-* ``validateForm(event, detail)`` - Validate data-dialog form
 
 .. seealso::
 
