@@ -120,6 +120,11 @@ Behavior used by any component/view needing translations.
 This provides gettext-like functions to translate and also an observed t
 object in case language changes and text needs to be re-rendered.
 
+Download translations
+~~~~~~~~~~~~~~~~~~~~~
+
+There is a gulp task to download translations to ``assets/locales/``, run the
+following to get them: ``npx -c 'gulp translations'``.
 
 Theming
 -------
